@@ -6,33 +6,22 @@ Công ty ABC đang vận hành một nền tảng trực tuyến với mục ti�
 
 ## Yêu Cầu
 
-### Xử Lý Dữ Liệu Truy Cập:
-
-- Tính tổng số lượt truy cập cho từng nguồn truy cập.
-- Phân loại các trang có hiệu suất cao nhất dựa trên tỷ lệ chuyển đổi.
-
-### Phân Tích Chiến Dịch Marketing:
-
-- Xác định chiến dịch marketing có ROI cao nhất.
-- Phân loại các chiến dịch dựa trên hiệu quả của chúng.
-
-### Tối Ưu Hóa Từ Khóa:
-
-- Tìm từ khóa có số lượt tìm kiếm và chuyển đổi cao nhất.
-- Đưa ra danh sách từ khóa tiềm năng cần tối ưu.
-
-### Phân Tích Khách Hàng:
-
-- Xác định nhóm khách hàng mục tiêu dựa trên dữ liệu nhân khẩu học.
-- Phân loại khách hàng theo hành vi truy cập.
-
-## Chi Tiết Yêu Cầu
-
 ### 1. Xử Lý Dữ Liệu Truy Cập
 
-**Tính Tổng Lượt Truy Cập:** Tạo một hàm `calculate_total_visits(data)` để tính tổng số lượt truy cập từ từng nguồn (organic, direct, referral, social).
+a) **Tính Tổng Lượt Truy Cập:** Tạo một hàm `calculate_total_visits(data)` để tính tổng số lượt truy cập từ từng nguồn (organic, direct, referral, social).
 
-**Phân Loại Hiệu Suất Trang Web:** Tạo một hàm `classify_page_performance(data)` để phân loại các trang có hiệu suất cao nhất dựa trên tỷ lệ chuyển đổi. Tỷ lệ chuyển đổi được tính bằng công thức:
+Trả về dict với content như sau:
+
+```python
+{
+    'organic': int,
+    'direct': int,
+    'referral': int,
+    'social': int
+}
+```
+
+b) **Phân Loại Hiệu Suất Trang Web:** Tạo một hàm `classify_page_performance(data)` để phân loại các trang có hiệu suất cao nhất dựa trên tỷ lệ chuyển đổi. Tỷ lệ chuyển đổi được tính bằng công thức:
 
 `Conversion Rate` = (`Number of Conversions` / `Number of Visits`) \* 100
 
@@ -40,13 +29,35 @@ Công ty ABC đang vận hành một nền tảng trực tuyến với mục ti�
 - **Trang Trung Bình:** 10% <= Tỷ lệ chuyển đổi <= 20%
 - **Trang Hiệu Suất Thấp:** Tỷ lệ chuyển đổi < 10%
 
+Trả về dict với content như sau:
+
+```python
+{
+    'High Performance': int,
+    'Average Performance': int,
+    'Low Performance': int
+}
+```
+
 ### 2. Phân Tích Chiến Dịch Marketing
 
-**Xác Định Chiến Dịch ROI Cao Nhất:** Tạo một hàm `find_highest_roi_campaign(data)` để tìm chiến dịch có `Return on Investment (ROI)` cao nhất. ROI được tính theo công thức:
+a) **Xác Định Chiến Dịch ROI Cao Nhất:** Tạo một hàm `find_highest_roi_campaign(data)` để tìm chiến dịch có `Return on Investment (ROI)` cao nhất. ROI được tính theo công thức:
 
 `ROI` = ((`Revenue` − `Cost`) / `Cost`) \* `100`
 
-**Phân Loại Chiến Dịch Marketing:** Tạo một hàm `classify_marketing_campaigns(data)` để phân loại chiến dịch thành các nhóm dựa theo `campaign_name`:
+Trả về dict với content như sau:
+
+```python
+{
+    'campaign_id': str,
+    'campaign_name': str,
+    'cost': int,
+    'revenue': int,
+    'roi': float
+}
+```
+
+b) **Phân Loại Chiến Dịch Marketing:** Tạo một hàm `classify_marketing_campaigns(data)` để phân loại chiến dịch thành các nhóm:
 
 trả về dict với content như sau:
 
