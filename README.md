@@ -4,7 +4,7 @@ Repository này được thiết kế dành cho các bạn thực tập sinh (in
 
 ## Nội Dung Chính
 
-- **Bài Thi Thuật Toán**:
+- **Bài Thi Xử lí dữ liệu**:
 
   - Bộ câu hỏi đa dạng từ cơ bản đến nâng cao, tập trung vào các thuật toán phổ biến.
   - Yêu cầu viết mã bằng `Python` để giải quyết các bài toán.
